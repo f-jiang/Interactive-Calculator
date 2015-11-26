@@ -10,7 +10,7 @@ import java.util.ArrayDeque;
  *
  * @author Feilan
  */
-public class CalculatorPrototype {
+public class Calculator {
 
     private static Pattern pattern;
     private static Matcher matcher;
@@ -108,7 +108,7 @@ public class CalculatorPrototype {
     
     public static String getPostfixNotation(String exp) {
         ArrayDeque<String> expQueue = queueify(exp);
-        return CalculatorPrototype.getPostfixNotation(expQueue).toString();
+        return Calculator.getPostfixNotation(expQueue).toString();
     }    
     
     public static void storeVariable(String name, double value) {

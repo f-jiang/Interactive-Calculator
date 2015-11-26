@@ -6,7 +6,7 @@
  */
 package interactivecalculator.interactive;
 
-import interactivecalculator.calculator.CalculatorPrototype;
+import interactivecalculator.calculator.Calculator;
 import java.util.Scanner;
 
 /**
@@ -41,13 +41,13 @@ public class Main {
                     case EVALUATE_INFIX:
                         System.out.print("Expression: ");
                         input = s.nextLine();
-                        System.out.println(CalculatorPrototype.eval(input, false));
+                        System.out.println(Calculator.eval(input, false));
 
                         break;
                     case EVALUATE_POSTFIX:
                         System.out.print("Expression: ");
                         input = s.nextLine();
-                        System.out.println(CalculatorPrototype.eval(input, true));
+                        System.out.println(Calculator.eval(input, true));
 
                         break;
                     case STORE_VARIABLE:
@@ -56,7 +56,7 @@ public class Main {
                             name = s.nextLine();
                             System.out.print("Value: ");
                             value = Double.parseDouble(s.nextLine());
-                            CalculatorPrototype.storeVariable(name, value);
+                            Calculator.storeVariable(name, value);
                         } catch (NumberFormatException e) {
                             System.out.println(e.toString());
                         }
