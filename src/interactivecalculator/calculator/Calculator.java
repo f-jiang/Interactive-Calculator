@@ -41,7 +41,7 @@ public class Calculator {
         String ans = null;
         
         if (!isPostfix) {
-            expQueue = getPostfixNotation(expQueue);
+            expQueue = toPostfix(expQueue);
         }
 
         while (!expQueue.isEmpty()) {
@@ -106,9 +106,9 @@ public class Calculator {
         return ans;
     }
     
-    public static String getPostfixNotation(String exp) {
+    public static String toPostfix(String exp) {
         ArrayDeque<String> expQueue = queueify(exp);
-        return Calculator.getPostfixNotation(expQueue).toString();
+        return Calculator.toPostfix(expQueue).toString();
     }    
     
     public static void storeVariable(String name, double value) {
@@ -188,7 +188,7 @@ public class Calculator {
     }
     
     // TODO: make this recognize mismatched parentheses and excess/lack of operands and operators
-    private static ArrayDeque<String> getPostfixNotation(ArrayDeque<String> exp) {
+    private static ArrayDeque<String> toPostfix(ArrayDeque<String> exp) {
         // shunting yard algorithm
         ArrayDeque<String> postfixExp = new ArrayDeque<>();  // output queue
         ArrayDeque<Operator> ops = new ArrayDeque<>();  // operator stack
