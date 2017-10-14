@@ -10,7 +10,7 @@ String a = Calculator.eval("3 + (4 * 5)^2", false);    // a == "403"
 String b = Calculator.eval("2 9 *", true);             // b == "18"
 ```
 
-###Conversions
+### Conversions
 ```
 String postfix = Calculator.toPostfix("3 + (4 * 5)^2");  // postfix == "3 4 5 * 2 ^ +"
 ```
